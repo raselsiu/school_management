@@ -91,15 +91,7 @@
                         </div>
                         <div class="row">
 
-                            {{-- <div class="form-group col-md-4">
-                                <label for="exampleInputFile">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                    </div>
-                                </div>
-                            </div> --}}
+                    
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

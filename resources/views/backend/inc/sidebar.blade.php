@@ -93,6 +93,85 @@
                               </li>
                           </ul>
                       </li>
+
+
+                      <li class="nav-item {{ $prefix == '/setup' ? 'menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-tachometer-alt"></i>
+                              <p>
+                                  Setup Management
+                                  <i class="right fas fa-angle-left"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{ route('setupStudentClassView') }}"
+                                      class="nav-link {{ $route == 'setupStudentClassView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Class</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('setupStudentYearView') }}"
+                                      class="nav-link {{ $route == 'setupStudentYearView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Year</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('setupStudentGroupView') }}"
+                                      class="nav-link {{ $route == 'setupStudentGroupView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Group</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('setupStudentShiftView') }}"
+                                      class="nav-link {{ $route == 'setupStudentShiftView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Shift</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('setupStudentFeeView') }}"
+                                      class="nav-link {{ $route == 'setupStudentFeeView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Fee Category</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('profilePasswordView') }}"
+                                      class="nav-link {{ $route == 'profilePasswordView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Exam Type</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('profilePasswordView') }}"
+                                      class="nav-link {{ $route == 'profilePasswordView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Subject</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('profilePasswordView') }}"
+                                      class="nav-link {{ $route == 'profilePasswordView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Assign Subject</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('profilePasswordView') }}"
+                                      class="nav-link {{ $route == 'profilePasswordView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Designation</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+
+
                       <li class="nav-item">
                           <a href="#" class="nav-link">
                               <i class="nav-icon fas fa-th"></i>

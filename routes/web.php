@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\CategoryFeeAmountController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentClassController;
 use App\Http\Controllers\StudentFeeController;
@@ -87,4 +88,13 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('/fee/category/edit/{id}', [StudentFeeController::class, 'edit'])->name('setupStudentFeeEdit');
     Route::post('/fee/category/update/{id}', [StudentFeeController::class, 'update'])->name('setupStudentFeeUpdate');
     Route::get('/fee/category/delete/{id}', [StudentFeeController::class, 'delete'])->name('setupStudentFeeDelete');
+
+    // Student Fee Category Amount
+    Route::get('/fee/category/amount/view', [CategoryFeeAmountController::class, 'view'])->name('studentFeeCategoryAmountView');
+    Route::get('/fee/category/amount/add', [CategoryFeeAmountController::class, 'add'])->name('studentFeeCategoryAmountAdd');
+    Route::post('/fee/category/amount/store', [CategoryFeeAmountController::class, 'store'])->name('studentFeeCategoryAmountStore');
+    Route::get('/fee/category/amount/edit/{fee_category_id}', [CategoryFeeAmountController::class, 'edit'])->name('studentFeeCategoryAmountEdit');
+    Route::get('/fee/category/amount/show/{fee_category_id}', [CategoryFeeAmountController::class, 'show'])->name('studentFeeCategoryAmountShow');
+    Route::post('/fee/category/amount/update/{fee_category_id}', [CategoryFeeAmountController::class, 'update'])->name('studentFeeCategoryAmountUpdate');
+    Route::get('/fee/category/amount/delete/{id}', [CategoryFeeAmountController::class, 'delete'])->name('studentFeeCategoryAmountDelete');
 });

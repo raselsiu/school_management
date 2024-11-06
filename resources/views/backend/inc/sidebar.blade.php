@@ -155,8 +155,15 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="{{ route('profilePasswordView') }}"
-                                      class="nav-link {{ $route == 'profilePasswordView' ? 'active' : '' }}">
+                                  <a href="{{ route('subjectView') }}"
+                                      class="nav-link {{ $route == 'subjectView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Subject</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('assignSubjectView') }}"
+                                      class="nav-link {{ $route == 'assignSubjectView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Assign Subject</p>
                                   </a>

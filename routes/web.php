@@ -121,7 +121,8 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('/assign/subject/view', [AssignSubjectController::class, 'view'])->name('assignSubjectView');
     Route::get('/assign/subject/add', [AssignSubjectController::class, 'add'])->name('assignSubjectAdd');
     Route::post('/assign/subject/store', [AssignSubjectController::class, 'store'])->name('assignSubjectStore');
-    Route::get('/assign/subject/edit/{id}', [AssignSubjectController::class, 'edit'])->name('assignSubjectEdit');
-    Route::post('/assign/subject/update/{id}', [AssignSubjectController::class, 'update'])->name('assignSubjectUpdate');
+    Route::get('/assign/subject/edit/{class_id}', [AssignSubjectController::class, 'edit'])->name('assignSubjectEdit');
+    Route::post('/assign/subject/update/{class_id}', [AssignSubjectController::class, 'update'])->name('assignSubjectUpdate');
     Route::get('/assign/subject/delete/{id}', [AssignSubjectController::class, 'delete'])->name('assignSubjectDelete');
+    Route::get('/assign/subject/show/{class_id}', [AssignSubjectController::class, 'show'])->name('showAssignSubject');
 });

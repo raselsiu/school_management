@@ -52,15 +52,11 @@ class CategoryFeeAmountController extends Controller
         return redirect()->back()->with('success', 'Data saved successfully!');
 
 
+        // $data = new CategoryFeeAmount();
+        // $data->name = $request->name;
+        // $data->save();
 
-
-
-
-        $data = new CategoryFeeAmount();
-        $data->name = $request->name;
-        $data->save();
-
-        return redirect()->route('studentFeeCategoryAmountView')->with('success', 'Fee Category Created Successfully');
+        // return redirect()->route('studentFeeCategoryAmountView')->with('success', 'Fee Category Created Successfully');
     }
 
     public function edit(string $fee_category_id)

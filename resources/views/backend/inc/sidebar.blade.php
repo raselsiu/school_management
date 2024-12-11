@@ -169,8 +169,8 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="{{ route('profilePasswordView') }}"
-                                      class="nav-link {{ $route == 'profilePasswordView' ? 'active' : '' }}">
+                                  <a href="{{ route('designationView') }}"
+                                      class="nav-link {{ $route == 'designationView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
                                       <p>Designation</p>
                                   </a>
@@ -178,15 +178,25 @@
                           </ul>
                       </li>
 
-
-                      <li class="nav-item">
+                      <li class="nav-item {{ $prefix == '/setup' ? 'menu-open' : '' }}">
                           <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-th"></i>
+                              <i class="nav-icon fas fa-tachometer-alt"></i>
                               <p>
-                                  sample
+                                  Student Management
+                                  <i class="right fas fa-angle-left"></i>
                               </p>
                           </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{ route('setupStudentClassView') }}"
+                                      class="nav-link {{ $route == 'setupStudentClassView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Class</p>
+                                  </a>
+                              </li>
+                          </ul>
                       </li>
+
                   </ul>
               </nav>
               <!-- /.sidebar-menu -->

@@ -19,3 +19,7 @@ button.addFieldBtn,
 button.removeFieldBtn {
     margin-top: 31px;
 }
+
+[class*=sidebar-dark-] {
+    background-color: #3a0139;
+}

@@ -1,0 +1,30 @@
+.profile-user-img {
+    width: 150px;
+    height: 150px;
+}
+
+input#image {
+    padding: 3px;
+}
+
+[class*="sidebar-dark-"] .nav-treeview>.nav-item>.nav-link.active,
+[class*="sidebar-dark-"] .nav-treeview>.nav-item>.nav-link.active:focus,
+[class*="sidebar-dark-"] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgb(20 87 106 / 90%);
+    color: #ffffff;
+}
+
+
+button.addFieldBtn,
+button.removeFieldBtn {
+    margin-top: 31px;
+}
+
+[class*=sidebar-dark-] {
+    background-color: #3a0139;
+}
+
+img#showImg {
+    border: 2px solid #a10ae2;
+    border-radius: 5px;
+}

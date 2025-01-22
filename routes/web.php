@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AssignSubjectController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Students\RollController;
 use App\Http\Controllers\Backend\Students\StudentRegiController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\CategoryFeeAmountController;
@@ -139,6 +140,9 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
 
 
 Route::group(['prefix' => 'students', 'middleware' => ['auth']], function () {
+
+    // Student Registration
+
     Route::get('/registration/view', [StudentRegiController::class, 'view'])->name('studentRegiView');
     Route::get('/registration/add', [StudentRegiController::class, 'add'])->name('studentRegiAdd');
     Route::post('/registration/store', [StudentRegiController::class, 'store'])->name('studentRegiStore');
@@ -147,8 +151,16 @@ Route::group(['prefix' => 'students', 'middleware' => ['auth']], function () {
     Route::get('/search-student-by-year-class', [StudentRegiController::class, 'searchYearClass'])->name('searchYearClass');
     Route::get('/promotion/{student_id}', [StudentRegiController::class, 'promotion'])->name('promotion');
     Route::post('/promotion/success/{student_id}', [StudentRegiController::class, 'promotionStore'])->name('promotionStore');
-
     Route::get('/details/{student_id}', [StudentRegiController::class, 'studentDetails'])->name('studentDetails');
+
+
+    // Student Roll Generation
+
+    Route::get('/roll/view', [RollController::class, 'studentRollView'])->name('studentRollView');
+    Route::get('/roll/get-student', [RollController::class, 'getRollStudent'])->name('getRollStudent');
+    Route::post('/roll/store', [RollController::class, 'studentRollStore'])->name('studentRollStore');
+
+
 });
 
 

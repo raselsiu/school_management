@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="{{ asset('backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
     <script src="{{ asset('backend/js/sweetalert2.js') }}"></script>
+    <script src="{{ asset('backend/js/notify.min.js') }}"></script>
     <link href="{{ asset('backend/js/sweetalert2.min.css') }}" rel="stylesheet">
+
 
 
     @stack('css')

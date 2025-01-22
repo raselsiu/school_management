@@ -194,6 +194,14 @@
                                       <p>Student Registration</p>
                                   </a>
                               </li>
+
+                              <li class="nav-item">
+                                <a href="{{ route('studentRollView') }}"
+                                    class="nav-link {{ $route == 'studentRollView' ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Roll Generate</p>
+                                </a>
+                            </li>
                           </ul>
                       </li>
 

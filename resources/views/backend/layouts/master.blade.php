@@ -179,6 +179,8 @@
     <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('backend/js/notify.min.js') }}"></script>
+    <script src="{{ asset('backend/js/handlebars.min.js') }}"></script>
 
     <script src="{{ asset('backend/js/sweetalert2.js') }}"></script>
     <!-- AdminLTE App -->

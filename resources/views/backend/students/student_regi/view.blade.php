@@ -65,7 +65,6 @@
                                     @if (Auth::user()->role == 'Admin')
                                         <th>Code</th>
                                     @endif
-
                                     <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
@@ -80,7 +79,7 @@
                                         <td>{{ $student->roll }}</td>
                                         <td>{{ $student['year']['name'] }}</td>
                                         <td>{{ $student['studentClass']['name'] }}</td>
-                                        @if (Auth::user()->role == 'Admin')
+                                        @if (Auth::user()->usertype == 'Admin')
                                             <td>{{ $student['student']['code'] }}</td>
                                         @endif
                                         <td>
@@ -97,9 +96,9 @@
                                                 class="btn btn-sm btn-success"><i class="fa fa-check"></i>
                                             </a>
 
-                                            
-                                            <a target="_blank"  href="{{ route('studentDetails', $student->student_id) }}" title="Details"
-                                                class="btn btn-sm btn-info"><i class="fa fa-eye"></i>
+
+                                            <a target="_blank" href="{{ route('studentDetails', $student->student_id) }}"
+                                                title="Details" class="btn btn-sm btn-info"><i class="fa fa-eye"></i>
                                             </a>
 
                                         </td>
@@ -124,78 +123,75 @@
                             </tfoot>
                         </table>
                     @else
-                    <table id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>SL.</th>
-                                <th>Name</th>
-                                <th>ID No.</th>
-                                <th>Roll</th>
-                                <th>Year</th>
-                                <th>Class</th>
-                                @if (Auth::user()->role == 'Admin')
-                                    <th>Code</th>
-                                @endif
-
-                                <th>Image</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            @foreach ($allData as $key => $student)
-
-
-
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
-                                    <td width='5%'>{{ $key + 1 }}</td>
-                                    <td>{{ $student['student']['name'] }}</td>
-                                    <td>{{ $student['student']['id_no'] }}</td>
-                                    <td>{{ $student->roll }}</td>
-                                    <td>{{ $student['year']['name'] }}</td>
-                                    <td>{{ $student['studentClass']['name'] }}</td>
-                                    @if (Auth::user()->role == 'Admin')
-                                        <td>{{ $student['student']['code'] }}</td>
+                                    <th>SL.</th>
+                                    <th>Name</th>
+                                    <th>ID No.</th>
+                                    <th>Roll</th>
+                                    <th>Year</th>
+                                    <th>Class</th>
+                                    @if (Auth::user()->usertype == 'Admin')
+                                        <th>Code</th>
                                     @endif
-                                    <td>
-                                        <img src="{{ !empty($student['student']['image']) ? url('/upload/student_image/' . $student['student']['image']) : asset('uploads/no_img.png') }}"
-                                            alt="Preview Image" height="40px" width="40px"
-                                            style="border: 1px solid #cac2c2; border-radius: 5px;display: table;margin:0 auto;">
-                                    </td>
-                                    <td width='15%'>
-                                        <a href="{{ route('studentRegiEdit',$student->student_id) }}" title="Edit"
-                                            class="btn btn-sm btn-primary"><i class="fa fa-edit"></i>
-                                        </a>
 
-                                        <a href="{{ route('promotion', $student->student_id) }}" title="Promotion"
-                                            class="btn btn-sm btn-success"><i class="fa fa-check"></i>
-                                        </a>
-
-                                        <a target="_blank" href="{{ route('studentDetails', $student->student_id) }}" title="Details"
-                                            class="btn btn-sm btn-info"><i class="fa fa-eye"></i>
-                                        </a>
-
-                                    </td>
+                                    <th>Image</th>
+                                    <th>Actions</th>
                                 </tr>
-                            @endforeach
+                            </thead>
+                            <tbody>
 
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>SL.</th>
-                                <th>Name</th>
-                                <th>ID No.</th>
-                                <th>Roll</th>
-                                <th>Year</th>
-                                <th>Class</th>
-                                @if (Auth::user()->role == 'Admin')
-                                    <th>Code</th>
-                                @endif
-                                <th>Image</th>
-                                <th>Actions</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                @foreach ($allData as $key => $student)
+                                    <tr>
+                                        <td width='5%'>{{ $key + 1 }}</td>
+                                        <td>{{ $student['student']['name'] }}</td>
+                                        <td>{{ $student['student']['id_no'] }}</td>
+                                        <td>{{ $student->roll }}</td>
+                                        <td>{{ $student['year']['name'] }}</td>
+                                        <td>{{ $student['studentClass']['name'] }}</td>
+                                        @if (Auth::user()->usertype == 'Admin')
+                                            <td>{{ $student['student']['code'] }}</td>
+                                        @endif
+                                        <td>
+                                            <img src="{{ !empty($student['student']['image']) ? url('/upload/student_image/' . $student['student']['image']) : asset('uploads/no_img.png') }}"
+                                                alt="Preview Image" height="40px" width="40px"
+                                                style="border: 1px solid #cac2c2; border-radius: 5px;display: table;margin:0 auto;">
+                                        </td>
+                                        <td width='15%'>
+                                            <a href="{{ route('studentRegiEdit', $student->student_id) }}" title="Edit"
+                                                class="btn btn-sm btn-primary"><i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <a href="{{ route('promotion', $student->student_id) }}" title="Promotion"
+                                                class="btn btn-sm btn-success"><i class="fa fa-check"></i>
+                                            </a>
+
+                                            <a target="_blank" href="{{ route('studentDetails', $student->student_id) }}"
+                                                title="Details" class="btn btn-sm btn-info"><i class="fa fa-eye"></i>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Name</th>
+                                    <th>ID No.</th>
+                                    <th>Roll</th>
+                                    <th>Year</th>
+                                    <th>Class</th>
+                                    @if (Auth::user()->usertype == 'Admin')
+                                        <th>Code</th>
+                                    @endif
+                                    <th>Image</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     @endif
 
                 </div>

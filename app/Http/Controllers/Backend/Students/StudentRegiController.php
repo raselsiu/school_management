@@ -10,10 +10,10 @@ use App\Models\StudentGroupSetup;
 use App\Models\StudentShiftSetup;
 use App\Models\StudentYearSetup;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 class StudentRegiController extends Controller
 {
@@ -287,8 +287,10 @@ class StudentRegiController extends Controller
 
     public function studentDetails(string $student_id)
     {
-        $data['details'] = AssignStudent::with(['student','discount'])->where('student_id',$student_id)->first(); 
+
+        $data['details'] = AssignStudent::with(['student', 'discount'])->where('student_id', $student_id)->first();
+
         $pdf = Pdf::loadView('backend.students.student_regi.details', $data);
-        return $pdf->stream();
+        return $pdf->stream('details.pdf');
     }
 }

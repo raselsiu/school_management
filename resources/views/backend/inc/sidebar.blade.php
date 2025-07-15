@@ -187,6 +187,7 @@
                               </p>
                           </a>
                           <ul class="nav nav-treeview">
+
                               <li class="nav-item">
                                   <a href="{{ route('studentRegiView') }}"
                                       class="nav-link {{ $route == 'studentRegiView' ? 'active' : '' }}">
@@ -196,12 +197,80 @@
                               </li>
 
                               <li class="nav-item">
-                                <a href="{{ route('studentRollView') }}"
-                                    class="nav-link {{ $route == 'studentRollView' ? 'active' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Roll Generate</p>
-                                </a>
-                            </li>
+                                  <a href="{{ route('studentRollView') }}"
+                                      class="nav-link {{ $route == 'studentRollView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Roll Generate</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('studentRegiFee') }}"
+                                      class="nav-link {{ $route == 'studentRegiFee' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Registration Fee</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('monthlyFeeView') }}"
+                                      class="nav-link {{ $route == 'monthlyFeeView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Monthly Fee</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('examFeeView') }}"
+                                      class="nav-link {{ $route == 'examFeeView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Exam Fee</p>
+                                  </a>
+                              </li>
+
+                          </ul>
+                      </li>
+
+                      <li class="nav-item {{ $prefix == '/employees' ? 'menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-tachometer-alt"></i>
+                              <p>
+                                  Manage Employee
+                                  <i class="right fas fa-angle-left"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+
+                              <li class="nav-item">
+                                  <a href="{{ route('employeeRegiView') }}"
+                                      class="nav-link {{ $route == 'employeeRegiView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Employee Registration</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('employeeSalaryView') }}"
+                                      class="nav-link {{ $route == 'employeeSalaryView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Employee Salary</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('employeeLeaveView') }}"
+                                      class="nav-link {{ $route == 'employeeLeaveView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Employee Leave</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('employeeAttendView') }}"
+                                      class="nav-link {{ $route == 'employeeAttendView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Employee Attendance</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
 

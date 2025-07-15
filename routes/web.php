@@ -1,7 +1,14 @@
 <?php
 
 use App\Http\Controllers\AssignSubjectController;
+use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
+use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
+use App\Http\Controllers\Backend\Employee\EmployeeRegiController;
+use App\Http\Controllers\Backend\Employee\EmployeeSalaryController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Students\ExamFeeController;
+use App\Http\Controllers\Backend\Students\MonthlyFeeController;
+use App\Http\Controllers\Backend\Students\RegistrationFeeController;
 use App\Http\Controllers\Backend\Students\RollController;
 use App\Http\Controllers\Backend\Students\StudentRegiController;
 use App\Http\Controllers\Backend\UserController;
@@ -160,7 +167,57 @@ Route::group(['prefix' => 'students', 'middleware' => ['auth']], function () {
     Route::get('/roll/get-student', [RollController::class, 'getRollStudent'])->name('getRollStudent');
     Route::post('/roll/store', [RollController::class, 'studentRollStore'])->name('studentRollStore');
 
+    // Registration Fee
 
+    Route::get('regi/fee/view', [RegistrationFeeController::class, 'view'])->name('studentRegiFee');
+    Route::get('/get-student-fee', [RegistrationFeeController::class, 'getStudentsFee'])->name('getStudentsFee');
+    Route::get('/regi-fee-payslip', [RegistrationFeeController::class, 'paySlip'])->name('paySlip');
+
+    // Monthly Fee
+
+    Route::get('monthly/fee/view', [MonthlyFeeController::class, 'view'])->name('monthlyFeeView');
+    Route::get('monthly/get-student', [MonthlyFeeController::class, 'getMonthlyFee'])->name('getMonthlyFee');
+    Route::get('monthly/payslip', [MonthlyFeeController::class, 'monthlyFeePaySlip'])->name('monthlyFeePaySlip');
+
+    // Exam Fee
+
+    Route::get('exam/fee/view', [ExamFeeController::class, 'view'])->name('examFeeView');
+    Route::get('exam/get-student', [ExamFeeController::class, 'getStudentsExamFee'])->name('getStudentsExamFee');
+    Route::get('exam/payslip', [ExamFeeController::class, 'examFeePaySlip'])->name('examFeePaySlip');
+});
+
+
+
+Route::group(['prefix' => 'employees', 'middleware' => ['auth']], function () {
+
+    // Employee Registration
+    Route::get('regi/view', [EmployeeRegiController::class, 'view'])->name('employeeRegiView');
+    Route::get('regi/add', [EmployeeRegiController::class, 'add'])->name('employeeRegiAdd');
+    Route::post('regi/store', [EmployeeRegiController::class, 'store'])->name('employeeRegiStore');
+    Route::get('regi/edit/{id}', [EmployeeRegiController::class, 'edit'])->name('employeeRegiEdit');
+    Route::post('regi/update/{id}', [EmployeeRegiController::class, 'update'])->name('employeeRegiUpdate');
+    Route::get('regi/delete/{id}', [EmployeeRegiController::class, 'delete'])->name('employeeRegiDelete');
+    Route::get('regi/details/{id}', [EmployeeRegiController::class, 'details'])->name('employeeRegiDetails');
+
+    // Employee Salary
+    Route::get('salary/view', [EmployeeSalaryController::class, 'view'])->name('employeeSalaryView');
+    Route::get('salary/increment/{id}', [EmployeeSalaryController::class, 'salaryIncrement'])->name('employeeSalaryIncrement');
+    Route::post('salary/store/{id}', [EmployeeSalaryController::class, 'store'])->name('employeeSalaryStore');
+    Route::get('salary/details/{id}', [EmployeeSalaryController::class, 'details'])->name('employeeSalaryDetails');
+
+    // Employee Registration
+    Route::get('leave/view', [EmployeeLeaveController::class, 'view'])->name('employeeLeaveView');
+    Route::get('leave/add', [EmployeeLeaveController::class, 'add'])->name('employeeLeaveAdd');
+    Route::post('leave/store', [EmployeeLeaveController::class, 'store'])->name('employeeLeaveStore');
+    Route::get('leave/edit/{id}', [EmployeeLeaveController::class, 'edit'])->name('employeeLeaveEdit');
+    Route::post('leave/update/{id}', [EmployeeLeaveController::class, 'update'])->name('employeeLeaveUpdate');
+
+    // Employee Registration
+    Route::get('attend/view', [EmployeeAttendanceController::class, 'view'])->name('employeeAttendView');
+    Route::get('attend/add', [EmployeeAttendanceController::class, 'add'])->name('employeeAttendAdd');
+    Route::post('attend/store', [EmployeeAttendanceController::class, 'store'])->name('employeeAttendStore');
+    Route::get('attend/edit/{id}', [EmployeeAttendanceController::class, 'edit'])->name('employeeAttendEdit');
+    Route::post('attend/update/{id}', [EmployeeAttendanceController::class, 'update'])->name('employeeAttendUpdate');
 });
 
 

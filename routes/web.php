@@ -216,8 +216,8 @@ Route::group(['prefix' => 'employees', 'middleware' => ['auth']], function () {
     Route::get('attend/view', [EmployeeAttendanceController::class, 'view'])->name('employeeAttendView');
     Route::get('attend/add', [EmployeeAttendanceController::class, 'add'])->name('employeeAttendAdd');
     Route::post('attend/store', [EmployeeAttendanceController::class, 'store'])->name('employeeAttendStore');
-    Route::get('attend/edit/{id}', [EmployeeAttendanceController::class, 'edit'])->name('employeeAttendEdit');
-    Route::post('attend/update/{id}', [EmployeeAttendanceController::class, 'update'])->name('employeeAttendUpdate');
+    Route::get('attend/edit/{date}', [EmployeeAttendanceController::class, 'edit'])->name('employeeAttendEdit');
+    Route::get('attend/details/{date}', [EmployeeAttendanceController::class, 'details'])->name('employeeAttendDetails');
 });
 
 

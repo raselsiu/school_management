@@ -14,7 +14,7 @@ class EmployeeAttendanceController extends Controller
 {
     public function view()
     {
-        $data['allData'] = EmployeeAttendance::orderBy('id', 'desc')->get();
+        $data['allData'] = EmployeeAttendance::select('date')->groupBy('date')->orderBy('id', 'desc')->get();
         return view("backend.attend.view", $data);
     }
 
@@ -29,6 +29,7 @@ class EmployeeAttendanceController extends Controller
 
     public function store(Request $request)
     {
+        EmployeeAttendance::where('date', date('Y-m-d', strtotime($request->date)))->delete();
         $countemployee = count($request->employee_id);
         for ($i = 0; $i < $countemployee; $i++) {
             $attend_status = 'attend_status' . $i;
@@ -43,42 +44,18 @@ class EmployeeAttendanceController extends Controller
 
 
 
-    public function edit(string $id)
+    public function edit(string $date)
     {
-        $data['editData'] = EmployeeLeave::find($id);
+        $data['editData'] = EmployeeAttendance::where('date', $date)->get();
         $data['employees'] = User::where('usertype', 'employee')->get();
-        $data['leave_purpose'] = LeavePurpose::all();
-        return view('backend.employee_leave.edit', $data);
+        return view('backend.attend.edit', $data);
     }
 
 
-    public function update(Request $request, string $id)
+
+    public function details(string $date)
     {
-
-        if ($request->leave_purpose_id == "0") {
-            $leavepurpose = new LeavePurpose();
-            $leavepurpose->name = $request->name;
-            $leavepurpose->save();
-            $leave_purpose_id = $leavepurpose->id;
-        } else {
-            $leave_purpose_id = $request->leave_purpose_id;
-        }
-        $employee_leave = EmployeeLeave::find($id);
-        $employee_leave->employee_id = $request->employee_id;
-        $employee_leave->start_date = date('Y-m-d', strtotime($request->start_date));
-        $employee_leave->end_date = date('Y-m-d', strtotime($request->end_date));
-        $employee_leave->leave_purpose_id = $leave_purpose_id;
-        $employee_leave->save();
-        return redirect()->route('employeeLeaveView')->with('success', 'Data Updated successfully');
-    }
-
-
-    public function details(string $id)
-    {
-
-        $data['details'] = User::find($id);
-
-        $pdf = Pdf::loadView('backend.employee.details_pdf', $data);
-        return $pdf->stream('details.pdf');
+        $data['details'] = EmployeeAttendance::where('date', $date)->get();
+        return view('backend.attend.details', $data);
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegiController;
 use App\Http\Controllers\Backend\Employee\EmployeeSalaryController;
+use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\Students\ExamFeeController;
 use App\Http\Controllers\Backend\Students\MonthlyFeeController;
@@ -37,12 +38,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth()) {
+        return redirect()->route('home');
+    } else {
+        return redirect()->route('login');
+    }
 });
+
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -218,9 +224,10 @@ Route::group(['prefix' => 'employees', 'middleware' => ['auth']], function () {
     Route::post('attend/store', [EmployeeAttendanceController::class, 'store'])->name('employeeAttendStore');
     Route::get('attend/edit/{date}', [EmployeeAttendanceController::class, 'edit'])->name('employeeAttendEdit');
     Route::get('attend/details/{date}', [EmployeeAttendanceController::class, 'details'])->name('employeeAttendDetails');
+
+
+    // Employee Registration
+    Route::get('monthly/salary/view', [MonthlySalaryController::class, 'view'])->name('employeeMonthlySalaryView');
+    Route::get('monthly/salary/get-salary', [MonthlySalaryController::class, 'getSalary'])->name('employeeMonthlySalaryGetSalary');
+    Route::get('monthly/salary/pay-slip/{employee_id}', [MonthlySalaryController::class, 'paySlip'])->name('employeeMonthlySalaryPaySlip');
 });
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

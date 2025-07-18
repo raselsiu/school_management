@@ -89,9 +89,10 @@
                                         </div>
 
                                         <div class="form-group col-md-2">
-                                            <label for="name">Mark Obtained</label>
+                                            <label for="name">Subjective Marks</label>
                                             <input type="number" class="form-control" name="get_mark[]"
-                                                value="{{ $edit->get_mark }}" id="get_mark" placeholder="Mark Obtained">
+                                                value="{{ $edit->get_mark }}" id="get_mark"
+                                                placeholder="Subjective Marks">
                                             @if ($errors->has('get_mark'))
                                                 <span style="color: red">{{ $errors->first('get_mark') }}</span>
                                             @endif

@@ -6,6 +6,7 @@ use App\Models\AssignSubject;
 use App\Models\StudentClassSetup;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class AssignSubjectController extends Controller
@@ -105,33 +106,25 @@ class AssignSubjectController extends Controller
 
 
 
-
-
-            $hasClass = count($request->subject_id);
-            if ($hasClass != null) {
-                $subject_id = $request->input('subject_id');
-                $full_mark = $request->input('full_mark');
-                $pass_mark = $request->input('pass_mark');
-                $get_mark = $request->input('get_mark');
-
-
-                AssignSubject::where('class_id', $class_id)->delete();
-
-                foreach ($subject_id as $index => $sub_id) {
-
-                    $full_marks = $full_mark[$index];
-                    $pass_marks = $pass_mark[$index];
-                    $get_marks = $get_mark[$index];
-
-                    AssignSubject::create([
-                        'class_id' => $request->class_id,
-                        'subject_id' => $sub_id,
-                        'full_mark' => $full_marks,
-                        'pass_mark' => $pass_marks,
-                        'get_mark' => $get_marks,
-                    ]);
+            AssignSubject::whereNotIn('subject_id', $request->subject_id)->where('class_id', $request->class_id)->delete();
+            foreach ($request->subject_id as $key => $value) {
+                $assign_subject_exist = AssignSubject::where('subject_id', $request->subject_id[$key])->where('class_id', $request->class_id)->first();
+                if ($assign_subject_exist) {
+                    $assignSubjects = $assign_subject_exist;
+                } else {
+                    $assignSubjects = new AssignSubject();
                 }
+                $assignSubjects->class_id = $request->class_id;
+                $assignSubjects->subject_id = $request->subject_id[$key];
+                $assignSubjects->full_mark = $request->full_mark[$key];
+                $assignSubjects->pass_mark = $request->pass_mark[$key];
+                $assignSubjects->get_mark = $request->get_mark[$key];
+                $assignSubjects->updated_by = Auth::user()->id;
+                $assignSubjects->save();
             }
+
+
+
             return redirect()->route('assignSubjectView')->with('success', 'Updated Successfully');
         }
     }

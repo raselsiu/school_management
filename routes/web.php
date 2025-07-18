@@ -6,6 +6,9 @@ use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegiController;
 use App\Http\Controllers\Backend\Employee\EmployeeSalaryController;
 use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
+use App\Http\Controllers\Backend\Marks\AddMarksController;
+use App\Http\Controllers\Backend\Marks\DefaultController;
+use App\Http\Controllers\Backend\Marks\GradePointController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\Students\ExamFeeController;
 use App\Http\Controllers\Backend\Students\MonthlyFeeController;
@@ -230,4 +233,26 @@ Route::group(['prefix' => 'employees', 'middleware' => ['auth']], function () {
     Route::get('monthly/salary/view', [MonthlySalaryController::class, 'view'])->name('employeeMonthlySalaryView');
     Route::get('monthly/salary/get-salary', [MonthlySalaryController::class, 'getSalary'])->name('employeeMonthlySalaryGetSalary');
     Route::get('monthly/salary/pay-slip/{employee_id}', [MonthlySalaryController::class, 'paySlip'])->name('employeeMonthlySalaryPaySlip');
+});
+
+
+Route::group(['prefix' => 'marks', 'middleware' => ['auth']], function () {
+    Route::get('marks/add', [AddMarksController::class, 'add'])->name('marksAdd');
+    Route::post('store', [AddMarksController::class, 'store'])->name('storeMarks');
+    Route::get('edit', [AddMarksController::class, 'edit'])->name('editMarks');
+    Route::get('get-student-marks', [AddMarksController::class, 'getStudentMarks'])->name('getStudentMarks');
+    Route::post('update-student-marks', [AddMarksController::class, 'updateStudentMarks'])->name('updateStudentMarks');
+
+    // Grade Point
+    Route::get('grade/view', [GradePointController::class, 'view'])->name('gradePointView');
+    Route::get('grade/add', [GradePointController::class, 'add'])->name('gradePointAdd');
+    Route::post('grade/store', [GradePointController::class, 'store'])->name('gradePointStore');
+    Route::get('grade/edit/{id}', [GradePointController::class, 'edit'])->name('gradePointEdit');
+    Route::post('grade/update/{id}', [GradePointController::class, 'update'])->name('gradePointUpdate');
+});
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('get-student', [DefaultController::class, 'getStudent'])->name('getStudent');
+    Route::get('get-subject', [DefaultController::class, 'getSubject'])->name('getSubject');
 });

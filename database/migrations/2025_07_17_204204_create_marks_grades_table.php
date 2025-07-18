@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assign_subjects', function (Blueprint $table) {
+        Schema::create('marks_grades', function (Blueprint $table) {
             $table->id();
-            $table->integer('class_id');
-            $table->integer('subject_id');
-            $table->double('full_mark');
-            $table->double('pass_mark');
-            $table->double('get_mark');
-            $table->integer('updated_by');
+            $table->string('grade_name');
+            $table->string('grade_point');
+            $table->string('start_marks');
+            $table->string('end_marks');
+            $table->string('start_point');
+            $table->string('end_point');
+            $table->string('remarks');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assign_subjects');
+        Schema::dropIfExists('marks_grades');
     }
 };

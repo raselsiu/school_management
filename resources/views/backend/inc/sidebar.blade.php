@@ -281,6 +281,42 @@
                           </ul>
                       </li>
 
+                      <li class="nav-item {{ $prefix == '/marks' ? 'menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-tachometer-alt"></i>
+                              <p>
+                                  Marks Management
+                                  <i class="right fas fa-angle-left"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+
+                              <li class="nav-item">
+                                  <a href="{{ route('marksAdd') }}"
+                                      class="nav-link {{ $route == 'marksAdd' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Marks Entry</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('editMarks') }}"
+                                      class="nav-link {{ $route == 'editMarks' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Marks Edit</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('gradePointView') }}"
+                                      class="nav-link {{ $route == 'gradePointView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Grade Point</p>
+                                  </a>
+                              </li>
+
+                          </ul>
+                      </li>
+
                   </ul>
               </nav>
               <!-- /.sidebar-menu -->

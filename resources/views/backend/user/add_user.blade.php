@@ -91,7 +91,7 @@
                         </div> --}}
                         <div class="row">
 
-                    
+
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -128,11 +128,6 @@
 
     <script>
         $(function() {
-            // $.validator.setDefaults({
-            //     submitHandler: function() {
-            //         alert("Form successful submitted!");
-            //     }
-            // });
             $('#userForm').validate({
                 rules: {
                     name: {

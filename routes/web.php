@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AssignSubjectController;
+use App\Http\Controllers\Backend\AccSalaryController;
+use App\Http\Controllers\Backend\ACCStudentFeeController;
 use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegiController;
@@ -9,7 +11,9 @@ use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
 use App\Http\Controllers\Backend\Marks\AddMarksController;
 use App\Http\Controllers\Backend\Marks\DefaultController;
 use App\Http\Controllers\Backend\Marks\GradePointController;
+use App\Http\Controllers\Backend\OtherCostController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\ProfitReportController;
 use App\Http\Controllers\Backend\Students\ExamFeeController;
 use App\Http\Controllers\Backend\Students\MonthlyFeeController;
 use App\Http\Controllers\Backend\Students\RegistrationFeeController;
@@ -249,6 +253,35 @@ Route::group(['prefix' => 'marks', 'middleware' => ['auth']], function () {
     Route::post('grade/store', [GradePointController::class, 'store'])->name('gradePointStore');
     Route::get('grade/edit/{id}', [GradePointController::class, 'edit'])->name('gradePointEdit');
     Route::post('grade/update/{id}', [GradePointController::class, 'update'])->name('gradePointUpdate');
+});
+
+
+Route::group(['prefix' => 'accounts', 'middleware' => ['auth']], function () {
+    // Student Fee
+    Route::get('student/fee/view', [ACCStudentFeeController::class, 'view'])->name('accStudentFeeView');
+    Route::get('student/fee/add', [ACCStudentFeeController::class, 'add'])->name('accStudentFeeAdd');
+    Route::post('student/fee/store', [ACCStudentFeeController::class, 'store'])->name('accStudentFeeStore');
+    Route::get('student/get-student-fee', [ACCStudentFeeController::class, 'accGetStudent'])->name('accGetStudent');
+
+    // Employee Salary
+    Route::get('employee/salary/view', [AccSalaryController::class, 'view'])->name('accEmployeeSalaryView');
+    Route::get('employee/salary/add', [AccSalaryController::class, 'add'])->name('accEmployeeSalaryAdd');
+    Route::post('employee/salary/store', [AccSalaryController::class, 'store'])->name('accEmployeeSalaryStore');
+    Route::get('employee/get-employee-salary', [AccSalaryController::class, 'accGetEmployee'])->name('accGetEmployee');
+
+    //Others-Cost
+    Route::get('others/cost/view',  [OtherCostController::class, 'view'])->name('OthersCostview');
+    Route::get('others/cost/add',  [OtherCostController::class, 'add'])->name('OthersCostadd');
+    Route::post('others/cost/store',  [OtherCostController::class, 'store'])->name('OthersCoststore');
+    Route::get('others/cost/edit/{id}',  [OtherCostController::class, 'edit'])->name('OthersCostedit');
+    Route::post('others/cost/update/{id}',  [OtherCostController::class, 'update'])->name('OthersCostupdate');
+});
+
+Route::prefix('reports')->group(function () {
+    //Profit
+    Route::get('/profit/view', [ProfitReportController::class, 'view'])->name('profitReportView');
+    Route::get('/profit/get', [ProfitReportController::class, 'getProfit'])->name('getReportProfitDateWise');
+    Route::get('/profit/pdf', [ProfitReportController::class, 'pdf'])->name('reportsProfitGeneratePdf');
 });
 
 

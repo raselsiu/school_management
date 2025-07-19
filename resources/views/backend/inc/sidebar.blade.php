@@ -316,7 +316,61 @@
 
                           </ul>
                       </li>
+                      <li class="nav-item {{ $prefix == '/accounts' ? 'menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-tachometer-alt"></i>
+                              <p>
+                                  Account Management
+                                  <i class="right fas fa-angle-left"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
 
+                              <li class="nav-item">
+                                  <a href="{{ route('accStudentFeeView') }}"
+                                      class="nav-link {{ $route == 'accStudentFeeView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Fee</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('accEmployeeSalaryView') }}"
+                                      class="nav-link {{ $route == 'accEmployeeSalaryView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Employee Salary</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('OthersCostview') }}"
+                                      class="nav-link {{ $route == 'OthersCostview' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Others Cost</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item has-treeview {{ $prefix == '/reports' ? 'menu-open' : '' }}">
+                                  <a href="#" class="nav-link">
+                                      <i class="nav-icon fas fa-th"></i>
+                                      <p>
+                                          Report Management
+                                          <i class="right fas fa-angle-left"></i>
+                                      </p>
+                                  </a>
+                                  <ul class="nav nav-treeview">
+                                      <li class="nav-item">
+                                          <a href="{{ route('profitReportView') }}"
+                                              class="nav-link {{ $route == 'profitReportView' ? 'active' : '' }}">
+                                              <i class="far fa-circle nav-icon"></i>
+                                              <p>Monthly Profit</p>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+
+                          </ul>
+                      </li>
                   </ul>
               </nav>
               <!-- /.sidebar-menu -->

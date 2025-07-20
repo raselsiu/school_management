@@ -277,11 +277,19 @@ Route::group(['prefix' => 'accounts', 'middleware' => ['auth']], function () {
     Route::post('others/cost/update/{id}',  [OtherCostController::class, 'update'])->name('OthersCostupdate');
 });
 
-Route::prefix('reports')->group(function () {
+Route::group(['prefix' => 'reports', 'middleware' => ['auth']], function () {
     //Profit
     Route::get('/profit/view', [ProfitReportController::class, 'view'])->name('profitReportView');
     Route::get('/profit/get', [ProfitReportController::class, 'getProfit'])->name('getReportProfitDateWise');
     Route::get('/profit/pdf', [ProfitReportController::class, 'pdf'])->name('reportsProfitGeneratePdf');
+
+    // marksheet
+    Route::get('/marksheet/view', [ProfitReportController::class, 'markSheetView'])->name('markSheetView');
+    Route::get('/marksheet/get', [ProfitReportController::class, 'getMarkSheet'])->name('getMarkSheet');
+
+    // attendance
+    Route::get('/attendance/view', [ProfitReportController::class, 'attendanceView'])->name('attendanceView');
+    Route::get('/attendance/get', [ProfitReportController::class, 'getAttendance'])->name('getAttendance');
 });
 
 

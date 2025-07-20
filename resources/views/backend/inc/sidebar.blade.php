@@ -350,25 +350,42 @@
                                   </a>
                               </li>
 
-                              <li class="nav-item has-treeview {{ $prefix == '/reports' ? 'menu-open' : '' }}">
-                                  <a href="#" class="nav-link">
-                                      <i class="nav-icon fas fa-th"></i>
-                                      <p>
-                                          Report Management
-                                          <i class="right fas fa-angle-left"></i>
-                                      </p>
+
+                          </ul>
+                      </li>
+
+                      <li class="nav-item has-treeview {{ $prefix == '/reports' ? 'menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-th"></i>
+                              <p>
+                                  Report Management
+                                  <i class="right fas fa-angle-left"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{ route('profitReportView') }}"
+                                      class="nav-link {{ $route == 'profitReportView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Monthly Profit</p>
                                   </a>
-                                  <ul class="nav nav-treeview">
-                                      <li class="nav-item">
-                                          <a href="{{ route('profitReportView') }}"
-                                              class="nav-link {{ $route == 'profitReportView' ? 'active' : '' }}">
-                                              <i class="far fa-circle nav-icon"></i>
-                                              <p>Monthly Profit</p>
-                                          </a>
-                                      </li>
-                                  </ul>
                               </li>
 
+                              <li class="nav-item">
+                                  <a href="{{ route('markSheetView') }}"
+                                      class="nav-link {{ $route == 'markSheetView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Marksheet</p>
+                                  </a>
+                              </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('attendanceView') }}"
+                                      class="nav-link {{ $route == 'attendanceView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Attendance Report</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>

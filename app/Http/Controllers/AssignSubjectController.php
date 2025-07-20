@@ -63,6 +63,7 @@ class AssignSubjectController extends Controller
                     'full_mark' => $full_marks,
                     'pass_mark' => $pass_marks,
                     'get_mark' => $get_marks,
+                    'updated_by' => Auth::user()->name,
                 ]);
             }
         }

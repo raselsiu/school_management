@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AssignSubject extends Model
 {
     use HasFactory;
-    protected $fillable = ['class_id', 'subject_id', 'full_mark', 'pass_mark', 'get_mark'];
+    protected $fillable = ['class_id', 'subject_id', 'full_mark', 'pass_mark', 'get_mark', 'updated_by'];
 
 
     public function studentClass()

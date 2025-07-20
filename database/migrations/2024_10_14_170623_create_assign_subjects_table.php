@@ -18,7 +18,7 @@ return new class extends Migration
             $table->double('full_mark');
             $table->double('pass_mark');
             $table->double('get_mark');
-            $table->integer('updated_by');
+            $table->string('updated_by');
             $table->timestamps();
         });
     }

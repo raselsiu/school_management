@@ -290,6 +290,10 @@ Route::group(['prefix' => 'reports', 'middleware' => ['auth']], function () {
     // attendance
     Route::get('/attendance/view', [ProfitReportController::class, 'attendanceView'])->name('attendanceView');
     Route::get('/attendance/get', [ProfitReportController::class, 'getAttendance'])->name('getAttendance');
+
+    // Student Result
+    Route::get('student-result/view', [ProfitReportController::class, 'studentResultView'])->name('studentResultView');
+    Route::get('student-result/get', [ProfitReportController::class, 'getStudentResult'])->name('getStudentResult');
 });
 
 

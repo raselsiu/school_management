@@ -125,4 +125,40 @@ class ProfitReportController extends Controller
             return redirect()->back()->with('error', 'Sorry! These criteria does not match!');
         }
     }
+
+
+    public function studentResultView()
+    {
+        $data['years'] = StudentYearSetup::orderBy('id', 'desc')->get();
+        $data['classes'] = StudentClassSetup::all();
+        $data['exam_types'] = ExamType::all();
+        return view('backend.reports.results.view', $data);
+    }
+
+
+    public function getStudentResult(Request $request)
+    {
+        $year_id = $request->year_id;
+        $class_id = $request->class_id;
+        $exam_type_id = $request->exam_type_id;
+
+        $singleResult = StudentMarks::where('year_id', $year_id)
+            ->where('class_id', $class_id)
+            ->where('exam_type_id', $exam_type_id)
+            ->first();
+
+        if ($singleResult == true) {
+            $data['allData'] = StudentMarks::select('year_id', 'class_id', 'exam_type_id', 'student_id')
+                ->where('year_id', $year_id)
+                ->where('class_id', $class_id)
+                ->where('exam_type_id', $exam_type_id)
+                ->groupBy('year_id', 'class_id', 'exam_type_id', 'student_id')
+                ->get();
+
+            $pdf = PDF::loadView('backend.reports.results.result_pdf', $data);
+            return $pdf->stream('document.pdf');
+        } else {
+            return redirect()->back()->with('error', 'Sorry! These criteria does not match!');
+        }
+    }
 }

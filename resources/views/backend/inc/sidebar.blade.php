@@ -386,6 +386,14 @@
                                       <p>Attendance Report</p>
                                   </a>
                               </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('studentResultView') }}"
+                                      class="nav-link {{ $route == 'studentResultView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student Result</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>

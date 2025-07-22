@@ -25,7 +25,7 @@
                     <h1 class="card-title">Add Year</h1>
                     <a href="{{ route('setupStudentYearView') }}" class="float-right btn btn-sm btn-success"> <i
                             class="fa fa-list"></i>
-                        &nbsp;View Users</a>
+                        &nbsp;View Years</a>
                 </div>
                 <form method="POST" action="{{ route('setupStudentYearStore') }}" id="userForm">
                     @csrf

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMS | Dashboard</title>
+    <title>{{ $schoolNameEN }}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -31,6 +31,7 @@
 
 
     <link rel="stylesheet" href="{{ asset('backend/css/override.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('uploads/favicon.png') }}">
 
 
 </head>

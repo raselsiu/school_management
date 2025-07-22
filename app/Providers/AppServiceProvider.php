@@ -28,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
         view()->share('schoolNameEN', 'Al-Madina Islamic Institute Sylhet');
         view()->share('addressBN', 'বড়শালা, আবাদানি, এয়ারপোর্ট রোড, সিলেট');
         view()->share('addressEN', 'Madina Village, A/E, 10/1 Boroshala Abadani, Airport Road, Sylhet | 01777-285728');
+        view()->share('website', 'https://almadinasylbd.com');
     }
 }

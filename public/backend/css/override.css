@@ -28,3 +28,314 @@ img#showImg {
     border: 2px solid #a10ae2;
     border-radius: 5px;
 }
+
+body:not(.layout-fixed) .main-sidebar .sidebar {
+    position: fixed;
+}
+
+
+/* Sidebar css */
+/* Beautiful Dashboard Sidebar CSS */
+
+.main-sidebar {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+    border-right: none !important;
+    transition: all 0.3s ease !important;
+    width: 250px !important;
+    overflow-x: hidden !important;
+}
+
+/* Brand Link Styling */
+.brand-link {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 15px 20px !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.brand-link:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.brand-image {
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.brand-text {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Sidebar Container */
+.sidebar {
+    padding-top: 10px !important;
+}
+
+/* User Panel Styling */
+.user-panel {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 15px !important;
+    margin: 15px 10px !important;
+    padding: 15px !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    width: calc(100% - 20px) !important;
+    box-sizing: border-box !important;
+}
+
+.user-panel:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+.user-panel .image img {
+    border: 3px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.user-panel .info a {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Navigation Styling */
+.nav-sidebar {
+    padding: 0 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.nav-sidebar .nav-item {
+    margin-bottom: 5px !important;
+    width: 100% !important;
+}
+
+.nav-sidebar .nav-link {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    color: #e8eaf6 !important;
+    margin: 3px 0 !important;
+    padding: 12px 15px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: calc(100% - 6px) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+.nav-sidebar .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-sidebar .nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-sidebar .nav-link:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+    transform: translateX(3px) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.nav-sidebar .nav-link.active {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(5px) !important;
+    color: #ffffff !important;
+}
+
+.nav-sidebar .nav-link i {
+    width: 25px !important;
+    text-align: center !important;
+    margin-right: 10px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-sidebar .nav-link:hover i {
+    transform: scale(1.1) !important;
+    color: #ffffff !important;
+}
+
+.nav-sidebar .nav-link p {
+    font-weight: 500 !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Menu Open State */
+.nav-item.menu-open>.nav-link {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.nav-item.menu-open>.nav-link i.fas.fa-angle-left {
+    transform: rotate(-90deg) !important;
+}
+
+/* Tree View Styling */
+.nav-treeview {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 8px !important;
+    margin: 5px 0 !important;
+    padding: 8px 0 !important;
+    backdrop-filter: blur(5px) !important;
+    width: calc(100% - 6px) !important;
+    box-sizing: border-box !important;
+}
+
+.nav-treeview .nav-link {
+    background: transparent !important;
+    border-radius: 8px !important;
+    margin: 2px 8px !important;
+    padding: 8px 15px !important;
+    font-size: 13px !important;
+    width: calc(100% - 16px) !important;
+    box-sizing: border-box !important;
+}
+
+.nav-treeview .nav-link:hover {
+    background: rgba(0, 0, 0, 0.3) !important;
+    transform: translateX(2px) !important;
+}
+
+.nav-treeview .nav-link.active {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-left: 3px solid #64b5f6 !important;
+    font-weight: 600 !important;
+    color: #64b5f6 !important;
+}
+
+.nav-treeview .nav-icon {
+    font-size: 12px !important;
+    opacity: 0.8 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-sidebar {
+        transform: translateX(-100%) !important;
+    }
+
+    .main-sidebar.sidebar-open {
+        transform: translateX(0) !important;
+    }
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animation Classes */
+.nav-link {
+    animation: slideInLeft 0.3s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Glassmorphism Effect */
+.main-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Additional Modern Touches */
+.nav-sidebar .nav-item:first-child .nav-link {
+    margin-top: 10px;
+}
+
+.nav-sidebar .nav-item:last-child .nav-link {
+    margin-bottom: 20px;
+}
+
+/* Focus States for Accessibility */
+.nav-link:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+.main-sidebar,
+.main-sidebar::before {
+    width: 270px;
+}
+
+.main-sidebar {
+    width: 270px !important;
+}
+
+body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,
+body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,
+body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
+    margin-left: 270px;
+}
+
+.nav-sidebar .nav-link>.right,
+.nav-sidebar .nav-link>p>.right {
+    right: 0rem;
+    top: 16px;
+}
+
+.sidebar {
+    scrollbar-color: #a9a9a900 transparent;
+}

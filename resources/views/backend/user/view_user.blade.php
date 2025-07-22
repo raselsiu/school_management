@@ -1,6 +1,8 @@
 @extends('backend.layouts.master')
 
 
+
+
 @section('content')
     <div class="row mb-2">
         <div class="col-sm-6">
@@ -39,7 +41,7 @@
                             @foreach ($allUser as $key => $user)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $user->usertype }}</td>
+                                    <td>{{ $user->role }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->code }}</td>

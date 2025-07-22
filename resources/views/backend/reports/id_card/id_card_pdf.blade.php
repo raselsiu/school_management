@@ -258,8 +258,9 @@
                                         style="height: 73px; width: 63px; border-radius: 5px;">
                                 </td> --}}
                                 <td width="40%" class="text-center">
-                                    <p style="color: red; font-size: 20px; margin-bottom: 5px !important"><strong>ABC
-                                            School</strong></p>
+                                    <p style="color: red; font-size: 20px; margin-bottom: 5px !important">
+                                        <strong>{{ $schoolNameEN }}</strong>
+                                    </p>
                                     <br />
                                     <p class="btn btn-primary" style="padding: 5px; font-size: 20px;">Student ID Card
                                     </p>

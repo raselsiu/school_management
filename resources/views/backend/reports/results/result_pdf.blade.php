@@ -249,18 +249,16 @@
 
                     <tr>
                         <td class="text-center" width="100%">
-                            <h3 style="margin: 0"><strong>Brahmanbaria Residential School & College</strong></h3>
-                            <h4 style="margin-top:8px;margin-bottom: 8px;"><strong>Brahmanbaria Sadar,
-                                    Brahmanbaria</strong>
-                            </h4>
-                            <h5 style="margin: 0"><strong>www.school.dcsdevs.com</strong></h5>
+                            <h3 style="margin: 0"><strong>{{ $schoolNameEN }}</strong></h3>
+                            <h6 style="margin-top:8px;margin-bottom: 8px;"><strong>{{ $addressEN }}</strong></h6>
+                            <h5 style="margin: 0"><strong>{{ $website }}</strong></h5>
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div> <br>
             <div class="col-md-12 text-center">
                 <h4 style="font-weight: bold; ">Result of {{ @$allData[0]['exam_type']['name'] }}</h4>
-            </div>
+            </div> <br>
             <div class="col-md-12">
                 <table border="0" width="100%" cellpadding="1" cellspacing="2" class="text-center">
                     <tbody>

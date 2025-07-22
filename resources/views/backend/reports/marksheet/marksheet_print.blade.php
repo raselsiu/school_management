@@ -31,8 +31,10 @@
                             </div>
                             <div class="col-md-2"></div>
                             <div class="col-md-4 text-center" style=" float: left;">
-                                <h4><strong>ABC School</strong></h4>
-                                <h6><strong>Ultra-badda,Dhaka</strong></h6>
+                                <h3 style="margin: 0"><strong>{{ $schoolNameEN }}</strong></h3>
+                                <h6 style="margin-top:8px;margin-bottom: 8px;"><strong>{{ $addressEN }}</strong></h6>
+                                <h5 style="margin: 0"><strong>{{ $website }}</strong></h5>
+
                                 <h5><strong><u><i>Academic Transcript</i></u></strong></h5>
                                 <h6><strong>{{ $allMarks['0']['exam_type']['name'] }}</strong></h6>
                             </div>

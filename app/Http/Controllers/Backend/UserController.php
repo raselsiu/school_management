@@ -9,20 +9,20 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-  
+
     public function view()
     {
-        $data['allUser'] = User::where('usertype','=','admin')->get();
-        return view('backend.user.view_user',$data);
+        $data['allUser'] = User::where('usertype', '=', 'admin')->get();
+        return view('backend.user.view_user', $data);
     }
 
-  
+
     public function add(Request $request)
     {
         return view('backend.user.add_user');
     }
 
- 
+
     public function store(Request $request)
     {
 
@@ -33,7 +33,7 @@ class UserController extends Controller
         ]);
 
 
-        $code = rand(0000,9999);
+        $code = rand(0000, 9999);
         $data = new User();
         $data->usertype = 'admin';
         $data->role = $request->role;
@@ -42,16 +42,16 @@ class UserController extends Controller
         $data->password = bcrypt($code);
         $data->code = $code;
         $data->save();
-        return redirect()->route('backUsersView')->with('success','User Created Successfully!');
+        return redirect()->route('backUsersView')->with('success', 'User Created Successfully!');
     }
 
     public function edit(string $id)
     {
         $user = User::find($id);
-        return view('backend.user.edit',compact('user'));
+        return view('backend.user.edit', compact('user'));
     }
 
-   
+
     public function update(Request $request, string $id)
     {
 
@@ -66,14 +66,14 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
-        return redirect()->route('backUsersView')->with('success','Data Updated Successfully!');
+        return redirect()->route('backUsersView')->with('success', 'Data Updated Successfully!');
     }
 
-  
+
     public function delete(string $id)
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('backUsersView')->with('success','Data Deleted Successfully!');
+        return redirect()->route('backUsersView')->with('success', 'Data Deleted Successfully!');
     }
 }

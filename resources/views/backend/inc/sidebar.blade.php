@@ -6,13 +6,12 @@
       ?>
 
 
-
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
           <!-- Brand Logo -->
           <a href="{{ route('home') }}" class="brand-link">
               <img src="{{ asset('backend/img/logo.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
                   style="opacity: .8">
-              <span class="brand-text font-weight-light">School M. System</span>
+              <span class="brand-text font-weight-light">Al-Madina Institute</span>
           </a>
 
           <!-- Sidebar -->
@@ -95,7 +94,7 @@
                       </li>
 
 
-                      <li class="nav-item {{ $prefix == '/students' ? 'menu-open' : '' }}">
+                      <li class="nav-item {{ $prefix == '/setup' ? 'menu-open' : '' }}">
                           <a href="#" class="nav-link">
                               <i class="nav-icon fas fa-tachometer-alt"></i>
                               <p>
@@ -108,7 +107,7 @@
                                   <a href="{{ route('setupStudentClassView') }}"
                                       class="nav-link {{ $route == 'setupStudentClassView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Student Class</p>
+                                      <p>Class</p>
                                   </a>
                               </li>
 
@@ -116,21 +115,21 @@
                                   <a href="{{ route('setupStudentYearView') }}"
                                       class="nav-link {{ $route == 'setupStudentYearView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Student Year</p>
+                                      <p>Year</p>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a href="{{ route('setupStudentGroupView') }}"
                                       class="nav-link {{ $route == 'setupStudentGroupView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Student Group</p>
+                                      <p>Group</p>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a href="{{ route('setupStudentShiftView') }}"
                                       class="nav-link {{ $route == 'setupStudentShiftView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Student Shift</p>
+                                      <p>Shift</p>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -245,7 +244,7 @@
                                   <a href="{{ route('employeeRegiView') }}"
                                       class="nav-link {{ $route == 'employeeRegiView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Employee Registration</p>
+                                      <p>Registration</p>
                                   </a>
                               </li>
 
@@ -253,7 +252,7 @@
                                   <a href="{{ route('employeeSalaryView') }}"
                                       class="nav-link {{ $route == 'employeeSalaryView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Employee Salary</p>
+                                      <p>Salary</p>
                                   </a>
                               </li>
 
@@ -261,14 +260,14 @@
                                   <a href="{{ route('employeeLeaveView') }}"
                                       class="nav-link {{ $route == 'employeeLeaveView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Employee Leave</p>
+                                      <p>Leave</p>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a href="{{ route('employeeAttendView') }}"
                                       class="nav-link {{ $route == 'employeeAttendView' ? 'active' : '' }}">
                                       <i class="far fa-circle nav-icon"></i>
-                                      <p>Employee Attendance</p>
+                                      <p>Attendance</p>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -406,7 +405,7 @@
                       </li>
                   </ul>
               </nav>
-              <!-- /.sidebar-menu -->
+
           </div>
-          <!-- /.sidebar -->
+
       </aside>

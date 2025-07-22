@@ -20,7 +20,7 @@
                 <div class="card-header">
                     <h1 class="card-title">Student Group Lists</h1>
                     <a href="{{ route('setupStudentGroupAdd') }}" class="float-right btn btn-success"> <i
-                            class="fa fa-plus-circle"></i> Add Class</a>
+                            class="fa fa-plus-circle"></i> Add Group</a>
                 </div>
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">

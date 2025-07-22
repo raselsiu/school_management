@@ -22,10 +22,10 @@
         <div class="col-md-12 col-lg-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="card-title">Add User</h1>
+                    <h1 class="card-title">Add Class</h1>
                     <a href="{{ route('setupStudentClassView') }}" class="float-right btn btn-sm btn-success"> <i
                             class="fa fa-list"></i>
-                        &nbsp;View Users</a>
+                        &nbsp;View Classes</a>
                 </div>
                 <form method="POST" action="{{ route('setupStudentClassStore') }}" id="userForm">
                     @csrf

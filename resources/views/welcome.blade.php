@@ -852,7 +852,9 @@
         @endif
 
 
-        <h1 style="color: white;font-size: 55px">Hello SMS Apps</h1>
+        <h1 style="color: white;font-size: 55px">
+            {{ $schoolNameEN }}
+        </h1>
 
     </div>
 

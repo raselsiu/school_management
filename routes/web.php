@@ -294,6 +294,10 @@ Route::group(['prefix' => 'reports', 'middleware' => ['auth']], function () {
     // Student Result
     Route::get('student-result/view', [ProfitReportController::class, 'studentResultView'])->name('studentResultView');
     Route::get('student-result/get', [ProfitReportController::class, 'getStudentResult'])->name('getStudentResult');
+
+    // Student Result
+    Route::get('student-id-card/view', [ProfitReportController::class, 'studentIDCardView'])->name('studentIDCardView');
+    Route::get('student-id-card/get', [ProfitReportController::class, 'getStudentIDCard'])->name('getStudentIDCard');
 });
 
 

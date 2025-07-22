@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AccountEmployeeSalary;
 use App\Models\AccountOtherCost;
 use App\Models\AccountStudentFee;
+use App\Models\AssignStudent;
 use App\Models\EmployeeAttendance;
 use App\Models\ExamType;
 use App\Models\MarksGrade;
@@ -157,6 +158,29 @@ class ProfitReportController extends Controller
 
             $pdf = PDF::loadView('backend.reports.results.result_pdf', $data);
             return $pdf->stream('document.pdf');
+        } else {
+            return redirect()->back()->with('error', 'Sorry! These criteria does not match!');
+        }
+    }
+
+
+    public function studentIDCardView()
+    {
+        $data['years'] = StudentYearSetup::orderBy('id', 'desc')->get();
+        $data['classes'] = StudentClassSetup::all();
+        return view('backend.reports.id_card.view', $data);
+    }
+
+
+    public function getStudentIDCard(Request $request)
+    {
+        $year_id = $request->year_id;
+        $class_id = $request->class_id;
+        $check_data = AssignStudent::where('year_id', $year_id)->where('class_id', $class_id)->first();
+        if ($check_data == true) {
+            $data['allData'] = AssignStudent::where('year_id', $year_id)->where('class_id', $class_id)->get();
+            $pdf = Pdf::loadView('backend.reports.id_card.id_card_pdf', $data);
+            return $pdf->stream('id_card.pdf');
         } else {
             return redirect()->back()->with('error', 'Sorry! These criteria does not match!');
         }

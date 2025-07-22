@@ -394,6 +394,14 @@
                                       <p>Student Result</p>
                                   </a>
                               </li>
+
+                              <li class="nav-item">
+                                  <a href="{{ route('studentIDCardView') }}"
+                                      class="nav-link {{ $route == 'studentIDCardView' ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Student ID Card</p>
+                                  </a>
+                              </li>
                           </ul>
                       </li>
                   </ul>

@@ -8,14 +8,24 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $schoolNameEN }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('uploads/favicon.png') }}">
+
+    <style>
+        a.navbar-brand img {
+            margin-top: -10px !important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -23,7 +33,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="margin: 0;padding:0">
-                    {{ $schoolNameEN }}
+                    <img src="{{ asset('uploads/favicon.png') }}" alt="logo"
+                        width="30">&nbsp;&nbsp;{{ $schoolNameEN }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

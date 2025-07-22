@@ -135,7 +135,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
     position: relative !important;
     overflow: hidden !important;
-    width: calc(100% - 6px) !important;
+    width: calc(100% -18px) !important;
     box-sizing: border-box !important;
     white-space: nowrap !important;
 }
